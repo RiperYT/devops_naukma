@@ -38,3 +38,10 @@ jobs:
         run: |
           docker tag devops_naukma_week5:latest riperyt/devops_naukma_week5:latest
           docker push riperyt/devops_naukma_week5:latest
+          
+      - name: Test Docker image
+        if: success()
+        run: |
+          docker run -d -p 80:80 riperyt/devops_naukma_week5
+          sleep 5
+          curl http://localhost:80/
