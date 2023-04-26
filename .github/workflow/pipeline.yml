@@ -3,7 +3,7 @@ name: Week5-CI-CD
 on:
   push:
     branches:
-      - Week5
+      - master
 
 jobs:
   build-and-test:
